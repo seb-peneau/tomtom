@@ -1,9 +1,5 @@
 L'afficheur TAMTAM 
 
-# Voir le Wiki
-
-https://gitlab.forge.orange-labs.fr/exmu7356/afficheur-hackathon/wikis/home
-
 # Installation de l'environnement de développement
 
 ## avec vscode

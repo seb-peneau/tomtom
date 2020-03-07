@@ -1,13 +1,13 @@
 #include "Arduino.h"
 
-#include "../ports/board/boardInterface.h"
-#include "../ports/debug/debugInterface.h"
-#include "../ports/network/networkInterface.h"
-#include "../ports/storage/storageInterface.h"
-#include "../ports/display/displayInterface.h"
-#include "../ports/webserver/webserverinterface.h"
-#include "../ports/ota/otaInterface.h"
-#include "../ports/time/timeInterface.h"
+#include "../components/board/boardInterface.h"
+#include "../components/debug/debugInterface.h"
+#include "../components/network/networkInterface.h"
+#include "../components/storage/storageInterface.h"
+#include "../components/display/displayInterface.h"
+#include "../components/webserver/webserverinterface.h"
+#include "../components/ota/otaInterface.h"
+#include "../components/time/timeInterface.h"
 
 #define SSIDSTORAGE 10
 #define PASSSTORAGE 60

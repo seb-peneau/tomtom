@@ -11,6 +11,7 @@ void Domain::setup() {
   time->setup();
 
   displayWifiAnimation = false;
+
   // reset was triggered by user input on reset button
   // remove configuration
   if (board->isUserTriggeredReset()) {
@@ -30,6 +31,7 @@ void Domain::loop() {
   // debug->debug("Domain::loop");
   network->loop();
   webServer->loop();
+  display->loop();
   display->displayWifiStatus(!displayWifiAnimation);
 
   // Network disconnected
@@ -60,7 +62,9 @@ void Domain::loop() {
       network->closeAccessPoint(); 
     }  
     if (displayWifiAnimation == true) {
+      display->clearDisplay();
       ota->setup(debug);
+      debug->debug(network->getIpAddress());
       ota->onProgress([&, this](unsigned int progress, unsigned int total){
           debug->debug("Domain::on handleOtaProgress");
           return handleOtaProgress(progress, total);
@@ -72,7 +76,7 @@ void Domain::loop() {
 
     time->loop();
     display->displayHour(time->getHour(), time->getMinutes());
-
+    display->displayTemp(15);
     // start configuration webserver
     if (webServer->isStarted() == false) {
       handleConfiguration();

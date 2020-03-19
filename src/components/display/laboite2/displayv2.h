@@ -4,7 +4,7 @@
 #include "../displayInterface.h"
 
 #include <MD_Parola.h>
-#include <MD_MAX72xx.h>
+//#include <MD_MAX72xx.h>
 #include "myFont.h"
 
 // Define the number of devices we have in the chain and the hardware interface

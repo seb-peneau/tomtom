@@ -1,3 +1,5 @@
+#include <MD_MAX72xx.h>
+
 const MD_MAX72XX::fontType_t myFont[] PROGMEM = {
     0, // char 0
     0, // char 1

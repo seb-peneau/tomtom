@@ -131,8 +131,8 @@ void DisplayV2::displayOtaProgress (int progressPercent) {
       displayController->setPoint(6, i+ZONE_SIZE, true);
     }
   }
-  // 28 leds for 100 percent
-  int led = (int) (28 * progressPercent / 100);
-  displayController->setPoint(7, (2*ZONE_SIZE) - (3 + led), true);
-  displayController->setPoint(0, ZONE_SIZE - (3 + led), true);
+  // 30 leds for 100 percent
+  int led = (int) (30 * progressPercent / 100);
+  displayController->setPoint(7, (2*ZONE_SIZE) - (2 + led), true);
+  displayController->setPoint(0, ZONE_SIZE - (2 + led), true);
 }

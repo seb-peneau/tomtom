@@ -17,8 +17,7 @@ void StoreEeprom::write (char address, String data) {
   console->debug("StoreEeprom::write");
   EEPROM.begin(512);
   int _size = data.length();
-  int i;
-  for(i=0;i<_size;i++)
+  for (int i=0; i<_size; i++)
   {
     EEPROM.write(address+i,data[i]);
   }
@@ -31,7 +30,6 @@ void StoreEeprom::write (char address, String data) {
 String StoreEeprom::read (char address) {
   // console->debug("StoreEeprom::read : "+ (String) address);
   EEPROM.begin(512);
-  int i;
   char data[100]; //Max 100 Bytes
   int len=0;
   unsigned char k;

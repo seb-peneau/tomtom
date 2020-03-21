@@ -33,7 +33,6 @@ bool EspWifi::isApCreated () {
 bool EspWifi::createAccessPoint (String apSsid, String apPass) {
   if (!isConnecting) {
     debug->debug("Create access point....");
-    int wifiStatus = WiFi.status();
     bool res = false;
     res = WiFi.softAP(apSsid);
     IPAddress myIp = WiFi.softAPIP();
@@ -47,7 +46,7 @@ bool EspWifi::createAccessPoint (String apSsid, String apPass) {
 
 void EspWifi::closeAccessPoint () {
   debug->debug("Disconnect access point");
-  bool res = WiFi.softAPdisconnect();
+  WiFi.softAPdisconnect();
   apcreated = false;
 }
 

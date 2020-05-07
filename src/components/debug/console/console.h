@@ -7,7 +7,7 @@
 #define BAUDRATE 115200
 
 /** Uncomment following line to enable debug **/
-// #define DEBUG 1
+#define DEBUG 1
 class Console: public DebugInterface {
   public:
     Console ();

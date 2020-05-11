@@ -31,7 +31,7 @@ class TomtomDisplayImpl : public DisplayInterface
 
   public:
     TomtomDisplayImpl();
-    void setup ();
+    void setup (DebugInterface *debug);
     void loop ();
     void clearDisplay ();
     void setCoordStatus (int x, int y, bool state);

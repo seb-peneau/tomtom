@@ -5,7 +5,7 @@ TomtomDisplayImpl::TomtomDisplayImpl() {
   display = new PxMATRIX(32,16,P_LAT, P_OE,P_A,P_B,P_C);
 }
 
-void TomtomDisplayImpl::setup () {
+void TomtomDisplayImpl::setup (DebugInterface *debug) {
   display->begin(8);
   display->setFastUpdate(true);
   clearDisplay();

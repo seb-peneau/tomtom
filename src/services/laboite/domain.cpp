@@ -7,7 +7,7 @@ void Domain::setup() {
   network->setup(debug);
   storage->setup(debug);
   webServer->setup(debug);
-  display->setup();
+  display->setup(debug);
   time->setup();
 
   displayWifiAnimation = false;

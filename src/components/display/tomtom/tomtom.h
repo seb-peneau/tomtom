@@ -40,5 +40,6 @@ class TomtomDisplayImpl : public DisplayInterface
     void displayTemp(int temp);
     void displayConfigurationMode(bool confEnabled);
     void displayOtaProgress (int progressPercent);
+    void displayIpAddress (String ipAddress);
 
 };

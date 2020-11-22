@@ -2,7 +2,7 @@
 #include "components/debug/debugInterface.h"
 #include "components/network/networkInterface.h"
 #include "components/storage/storageInterface.h"
-#include "components/display/displayInterface.h"
+#include "./component/display/bootstrapDisplay.h"
 #include "components/webserver/webserverinterface.h"
 #include "components/ota/otaInterface.h"
 
@@ -17,7 +17,7 @@ class Domain {
     DebugInterface* debug;
     NetworkInterface* network;
     StorageInterface* storage;
-    DisplayInterface* display;
+    BootstrapDisplay* display;
     WebServerInterface* webServer;
     BoardInterface *board;
     OtaInterface *ota;
@@ -41,7 +41,7 @@ class Domain {
     void setDebugInterface(DebugInterface* debug);
     void setNetworkInterface(NetworkInterface* network);
     void setStorageInterface(StorageInterface* storage);
-    void setDisplayInterface(DisplayInterface* display);
+    void setDisplayInterface(BootstrapDisplay* display);
     void setWebServerInterface(WebServerInterface* webServer);
     void setOtaInterface(OtaInterface* ota);
    

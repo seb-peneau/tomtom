@@ -2,7 +2,7 @@
 
 #include "services/bootstrap/domain.h"
 
-#include "components/display/bootstrap/bootstrap.h"
+#include "../../services/bootstrap/component/display/bootstrapDisplay.h"
 #include "./components/debug/console/console.h"
 #include "./components/network/wifi/wifi.h"
 #include "./components/storage/eeprom/storeEeprom.h"
@@ -16,7 +16,7 @@ Domain* Tomtom = new Domain();
 
 void setup() {
   Console* console = new Console();
-  BootstrapDisplayImpl *ledDisplay = new BootstrapDisplayImpl(); // BOOTSTRAP DISPLAY IMPL
+  BootstrapDisplay *ledDisplay = new BootstrapDisplay(); // BOOTSTRAP DISPLAY IMPL
   Tomtom->setBoardInterface(new ESPBoard()); // FOR ESP BOARD
   Tomtom->setDebugInterface(console);
   Tomtom->setDisplayInterface(ledDisplay);

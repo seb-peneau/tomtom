@@ -30,8 +30,8 @@ void BootstrapDisplay::displayConfigurationMode(bool confModeEnabled) {
     debug->debug("BootstrapDisplay::displayConfigurationMode::true");
     clearDisplay();
     setCursor(0, 0);    
-    display->setTextColor(display->color565(255,0,0));  
-    display->print("Config Mode");
+    display->setTextColor(display->color565(255,255,255));  
+    display->print("Config");
   }
 }
 
@@ -39,16 +39,31 @@ void BootstrapDisplay::setCoordStatus (int i, int j, bool state) {
 }
 
 void BootstrapDisplay::displayWifiStatus(bool isWifiConnected) {
-  if (isWifiConnected == false && isWifiConnected != lastWifiStatus) {
-    debug->debug("BootstrapDisplay::displayWifiStatus::false");
+  if (isWifiConnected == true && isWifiConnected != lastWifiStatus) {
+    debug->debug("BootstrapDisplay::displayWifiStatus::true");
     clearDisplay();
     setCursor(0, 0);
+    display->setTextColor(display->color565(255,255,255)); 
     display->print("no wifi");
-    lastWifiStatus = false;
+    lastWifiStatus = true;
   } else if (isWifiConnected != lastWifiStatus) {
     debug->debug("BootstrapDisplay::displayWifiStatus::false");
-    lastWifiStatus = true;
+    lastWifiStatus = false;
   }
+}
+
+void BootstrapDisplay::displayOtaProgress (int progressPercent) {
+  debug->debug("BootstrapDisplayImpl::displayOtaProgress");
+  clearDisplay();
+  setCursor(12, 4);
+  display->print((String) progressPercent + " %");  
+}
+
+void BootstrapDisplay::displayString (String ipAddress) {
+  debug->debug("BootstrapDisplay::display");
+  clearDisplay();
+  setCursor(0, 0);  
+  display->print(ipAddress);
 }
 
 

@@ -43,6 +43,8 @@ class BootstrapDisplay : public DisplayInterface
     void setCoordStatus (int x, int y, bool state);
     void displayConfigurationMode(bool confModeEnabled);
     void displayWifiStatus(bool isWifiConnected);
+    void displayOtaProgress(int progress);
+    void displayString(String text);
 };
 
 #endif

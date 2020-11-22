@@ -6,8 +6,8 @@
 #include "components/webserver/webserverinterface.h"
 #include "components/ota/otaInterface.h"
 
-#define SSIDSTORAGE 10
-#define PASSSTORAGE 60
+#define SSIDSTORAGE "ssid"
+#define PASSSTORAGE "pass"
 
 #define APSSID "tamtam"
 #define APPWD "T4MT4M"

@@ -74,7 +74,7 @@ void Domain::loop() {
                 debug->debug("Domain::on handleOtaProgress");
                 return handleOtaProgress(progress, total);
             });
-            //display->displayIpAddress(network->getIpAddress());
+            display->displayString(network->getIpAddress());
             displayWifiAnimation = false;
         }
         ota->loop();
@@ -160,7 +160,7 @@ void Domain::handleSoftReset() {
 void Domain::handleOtaProgress(unsigned int progress, unsigned int total) {
     double progressP = (float)progress / (float)total;
     int progressPercent = progressP * 100;
-    //display->displayOtaProgress(progressPercent);
+    display->displayOtaProgress(progressPercent);
 }
 
 void Domain::setBoardInterface(BoardInterface* bI) {

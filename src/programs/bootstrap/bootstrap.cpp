@@ -5,7 +5,7 @@
 #include "../../services/bootstrap/component/display/bootstrapDisplay.h"
 #include "./components/debug/console/console.h"
 #include "./components/network/wifi/wifi.h"
-#include "./components/storage/eeprom/storeEeprom.h"
+#include "./components/storage/littlefs/storeLittlefs.h"
 #include "./components/board/ESP/espBoard.h"
 #include "./components/storage/spiff/storeSpiff.h"
 #include "./components/webserver/webserver/webserver.h"
@@ -21,7 +21,7 @@ void setup() {
   Tomtom->setDebugInterface(console);
   Tomtom->setDisplayInterface(ledDisplay);
   Tomtom->setNetworkInterface(new EspWifi());
-  Tomtom->setStorageInterface(new StoreEeprom()); // USE SPIFF for storage
+  Tomtom->setStorageInterface(new StoreLittlefs()); // USE SPIFF for storage
   Tomtom->setWebServerInterface(new EspWebServer());
   Tomtom->setOtaInterface(new ESPOta());
   Tomtom->setup();

@@ -1,7 +1,3 @@
-#ifdef LABOITE
-  #include "programs/laboite/laboite.cpp"
-#endif
-
 #ifdef TOMTOM
   #include "programs/tomtom/tomtom.cpp"
 #endif
